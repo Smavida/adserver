@@ -2,3 +2,5 @@
 node_modules
 .env
 smart-video-ads-*.json
+credentials.json
+token.json

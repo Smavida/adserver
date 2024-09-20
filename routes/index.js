@@ -1,18 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const trackerController = require('../controllers/tracker.js');
+const youtubeController = require('../controllers/youtube.js');
 
 router.get('/favicon.ico', (req, res) => {
-    return res.end();
+    return res.status(200).end();
 });
 
 router.get('/_ah/health', (req, res) => {
-    return res.end();
+    return res.status(200).end();
 });
 
 router.get('/_ah/warmup', (req, res) => {
-    return res.end();
+    return res.status(200).end();
 });
+
+router.get('/youtubeUpload', youtubeController.youtubeUpload);
 
 router.get('/trk/youtube/:booking/:type', trackerController.youtube);
 
